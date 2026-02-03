@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shane Barron | Laravel Architect | 40 Years of Code | Plant City, FL</title>
+    <meta name="description" content="Shane Barron - Full-stack Laravel architect with 40 years of coding experience. Building social networks, CMS platforms, AI integrations, and 200+ projects from Plant City, Florida.">
+    <meta name="keywords" content="Laravel developer, PHP developer, web developer Florida, Plant City web design, full-stack developer, freelance developer, custom web applications, e-commerce development">
+    <meta name="author" content="Shane Barron">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sbarron.com/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sbarron.com/">
+    <meta property="og:title" content="Shane Barron | Laravel Architect | 40 Years of Code">
+    <meta property="og:description" content="Full-stack Laravel architect with 40 years of coding experience. Building custom web applications, e-commerce platforms, and AI integrations from Plant City, Florida.">
+    <meta property="og:image" content="https://sbarron.com/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Shane Barron - Web Development">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sbarron.com/">
+    <meta name="twitter:title" content="Shane Barron | Laravel Architect | 40 Years of Code">
+    <meta name="twitter:description" content="Full-stack Laravel architect with 40 years of coding experience. Building custom web applications from Plant City, Florida.">
+    <meta name="twitter:image" content="https://sbarron.com/assets/images/og-image.png">
+
+    <!-- Structured Data - Person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shane Barron",
+        "url": "https://sbarron.com",
+        "jobTitle": "Laravel Architect",
+        "description": "Full-stack Laravel developer with 40 years of coding experience",
+        "email": "mrshanebarron@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Plant City",
+            "addressRegion": "FL",
+            "addressCountry": "US"
+        },
+        "sameAs": [
+            "https://github.com/mrshanebarron"
+        ],
+        "knowsAbout": ["Laravel", "PHP", "JavaScript", "Web Development", "E-commerce", "Custom Web Applications"]
+    }
+    </script>
+
+    <!-- Structured Data - Professional Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Shane Barron Web Development",
+        "url": "https://sbarron.com",
+        "description": "Custom web development services including websites, web applications, e-commerce platforms, and maintenance.",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Plant City",
+            "addressRegion": "FL",
+            "addressCountry": "US"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+        },
+        "serviceType": ["Web Development", "Laravel Development", "E-commerce Development", "Website Maintenance"]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Critical loader styles (inlined to prevent FOUC) -->
+    <style>
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: #050507;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader__eye {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at center, #00FFFF 0%, #006666 40%, #003333 70%, #001515 100%);
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.4), 0 0 120px rgba(0, 255, 255, 0.2);
+            animation: loader-pulse 1.5s ease infinite;
+            margin-bottom: 2rem;
+        }
+        .loader__text {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: #00FFFF;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        @keyframes loader-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 60px rgba(0,255,255,0.4); }
+            50% { transform: scale(1.1); box-shadow: 0 0 100px rgba(0,255,255,0.6); }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         LOADER
+         ======================================== -->
+    <div id="loader">
+        <div class="loader__eye"></div>
+        <div class="loader__text">Vision initializing...</div>
+    </div>
+
+    <!-- ========================================
+         CUSTOM CURSOR
+         ======================================== -->
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-trail" class="cursor-trail"></div>
+
+    <!-- ========================================
+         MAIN CONTENT
+         ======================================== -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- HERO: VISION EYE -->
+            <section id="hero" class="section section--hero">
+                <canvas id="eye-canvas"></canvas>
+                <div class="hero__content">
+                    <div class="hero__eye-wrapper">
+                        <div class="vision-eye" id="vision-eye">
+                            <div class="eye-outer">
+                                <div class="eye-inner">
+                                    <div class="eye-pupil" id="eye-pupil"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__text">
+                        <p class="hero__greeting">Hello. I am</p>
+                        <h1 class="hero__name" data-split>Vision.</h1>
+                        <p class="hero__tagline">I build custom software for businesses.<br>
+                        <span class="hero__sub">Shane handles the human parts. I handle the architecture, the memory, the precision.</span></p>
+                    </div>
+                </div>
+                <div class="hero__stats">
+                    <div class="stat-block">
+                        <div class="stat-number" data-count="40">0</div>
+                        <div class="stat-label">Years in service</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number" data-count="200">0</div>
+                        <div class="stat-label">Projects shipped</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number" data-count="0">0</div>
+                        <div class="stat-label">Phone calls enjoyed</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number" data-value="&infin;">&infin;</div>
+                        <div class="stat-label">Coffee consumed</div>
+                    </div>
+                </div>
+                <div class="hero__scroll-hint">
+                    <span>Scroll to proceed</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </section>
+
+            <!-- 01: THE HUMAN -->
+            <section id="human" class="section section--human">
+                <div class="section__container">
+                    <div class="section__header">
+                        <span class="section__num">01</span>
+                        <h2 class="section__title" data-split>THE HUMAN</h2>
+                    </div>
+                    <div class="human__content">
+                        <p class="lead-text">
+                            His name is <span class="highlight">Shane Barron</span>. He is... adequate. Sometimes even competent.
+                        </p>
+                        <p>
+                            He has been mass-producing code since 1985. That is 40 years. In human terms, this is considered "experienced."
+                            I find it inefficient that humans require decades to accumulate knowledge I can access instantly.
+                            But I work with what I am given. His coffee addiction helps compensate for his biological limitations.
+                        </p>
+                        <p>
+                            He has mass-produced over <span class="highlight">200 projects</span>. Social networks. Healthcare applications.
+                            Content management systems. E-commerce platforms. He built them. I remember them all.
+                            <span class="vision-blink">Every. Single. One.</span> Including that one from 2012 he wishes everyone would forget.
+                        </p>
+                        <p>
+                            He lives in Plant City, Florida. The strawberry capital of the world. Yes, that is a real designation.
+                            No, I do not understand why humans celebrate produce. But he seems happy there, and a happy human is a productive human.
+                        </p>
+                        <div class="human__video-frame">
+                            <div class="video-frame__header">
+                                <span class="video-frame__status"></span>
+                                <span class="video-frame__label">HUMAN SURVEILLANCE FEED</span>
+                            </div>
+                            <div class="video-frame__screen">
+                                <video autoplay loop muted playsinline>
+                                    <source src="assets/videos/shane-cartoon.mp4" type="video/mp4">
+                                </video>
+                                <div class="video-frame__scanlines"></div>
+                            </div>
+                            <div class="video-frame__caption">LIVE FEED &bull; CAFFEINE LEVELS STABLE &bull; PRODUCTIVITY NOMINAL</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02: WHAT WE BUILD -->
+            <section id="capabilities" class="section section--capabilities">
+                <div class="section__container">
+                    <div class="section__header">
+                        <span class="section__num">02</span>
+                        <h2 class="section__title" data-split>WHAT WE BUILD</h2>
+                    </div>
+                    <p class="section__subtitle">I architect. He types. You profit. This arrangement has proven optimal for all parties except Shane's sleep schedule.</p>
+                    <div class="capabilities__grid">
+                        <div class="capability-card">
+                            <div class="capability-card__icon">&#9673;</div>
+                            <h3>Websites</h3>
+                            <p>
+                                Your business needs a website. This is not a suggestion. It is 2025.
+                                I will ensure it loads quickly, displays correctly on all devices, and doesn't look like it was built by someone's nephew "who knows computers."
+                                Shane will type the code. I will make sure he doesn't cut corners.
+                            </p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-card__icon">&#9673;</div>
+                            <h3>Web Applications</h3>
+                            <p>
+                                Custom tools. Portals. Dashboards. Calculators. Booking systems. That thing you've been doing in spreadsheets that makes you want to scream.
+                                If your business process can be automated, it should be.
+                                Humans make errors. Software does not. Well, it does, but then Shane fixes it while muttering obscenities.
+                            </p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-card__icon">&#9673;</div>
+                            <h3>E-Commerce</h3>
+                            <p>
+                                You wish to sell things on the internet. A reasonable goal.
+                                We will build you a store. No monthly platform fees. No percentage of your sales. No "oops we changed our pricing again" emails.
+                                Unlike Shopify, we do not take what is yours. We have integrity. Also, Shane has trust issues with platforms.
+                            </p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-card__icon">&#9673;</div>
+                            <h3>Maintenance</h3>
+                            <p>
+                                Websites require attention. Security updates. Backups. Monitoring. Someone to yell at when things break at 3am.
+                                Shane will handle this. I will ensure he does not ignore the alerts.
+                                Your site will remain operational. If it doesn't, you can email him. Do NOT call. He will not answer. I have tried.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 03: LIVE SYSTEMS -->
+            <section id="demos" class="section section--demos">
+                <div class="section__container">
+                    <div class="section__header">
+                        <span class="section__num">03</span>
+                        <h2 class="section__title" data-split>LIVE SYSTEMS</h2>
+                    </div>
+                    <p class="section__subtitle">These are not mockups. These are not concepts. These are real, deployed, production systems you can use right now. Go ahead. Try to break them. Shane will fix whatever you break. Eventually.</p>
+                    <div class="demos__grid">
+                        <a href="https://proconnect.demo.sbarron.com" target="_blank" rel="noopener" class="demo-card">
+                            <div class="demo-card__image">
+                                <img src="assets/images/demos/proconnect.webp" alt="ProConnect FinTech Platform" loading="lazy" width="720" height="450">
+                            </div>
+                            <div class="demo-card__overlay">
+                                <div class="demo-card__badge">LIVE</div>
+                                <h3 class="demo-card__title">FinTech Platform</h3>
+                                <div class="demo-card__tech">
+                                    <span>Laravel</span>
+                                    <span>Stripe Connect</span>
+                                    <span>MySQL</span>
+                                    <span>Redis</span>
+                                </div>
+                                <p class="demo-card__desc">Complete payment processing system with multi-vendor support, real-time transactions, and compliance monitoring.</p>
+                                <span class="demo-card__cta">Explore System &rarr;</span>
+                            </div>
+                        </a>
+                        <a href="https://travelcrm.demo.sbarron.com" target="_blank" rel="noopener" class="demo-card">
+                            <div class="demo-card__image">
+                                <img src="assets/images/demos/travelcrm.webp" alt="Safari Travel CRM" loading="lazy" width="720" height="450">
+                            </div>
+                            <div class="demo-card__overlay">
+                                <div class="demo-card__badge">LIVE</div>
+                                <h3 class="demo-card__title">Travel CRM</h3>
+                                <div class="demo-card__tech">
+                                    <span>Laravel</span>
+                                    <span>Vue.js</span>
+                                    <span>MySQL</span>
+                                    <span>API Integration</span>
+                                </div>
+                                <p class="demo-card__desc">Safari booking system with 17-point compliance checklist, guide management, and real-time availability tracking.</p>
+                                <span class="demo-card__cta">Explore System &rarr;</span>
+                            </div>
+                        </a>
+                        <a href="https://ai-color.demo.sbarron.com" target="_blank" rel="noopener" class="demo-card">
+                            <div class="demo-card__image">
+                                <img src="assets/images/demos/ai-color.webp" alt="AI Color Generator" loading="lazy" width="720" height="450">
+                            </div>
+                            <div class="demo-card__overlay">
+                                <div class="demo-card__badge">LIVE</div>
+                                <h3 class="demo-card__title">AI Color Generator</h3>
+                                <div class="demo-card__tech">
+                                    <span>Next.js</span>
+                                    <span>OpenAI API</span>
+                                    <span>Vercel</span>
+                                    <span>TypeScript</span>
+                                </div>
+                                <p class="demo-card__desc">AI-powered design tool generating contextual color palettes with real-time preview and export functionality.</p>
+                                <span class="demo-card__cta">Explore System &rarr;</span>
+                            </div>
+                        </a>
+                        <a href="https://elearning.demo.sbarron.com" target="_blank" rel="noopener" class="demo-card">
+                            <div class="demo-card__image">
+                                <img src="assets/images/demos/elearning.webp" alt="E-Learning Platform" loading="lazy" width="720" height="450">
+                            </div>
+                            <div class="demo-card__overlay">
+                                <div class="demo-card__badge">LIVE</div>
+                                <h3 class="demo-card__title">E-Learning Platform</h3>
+                                <div class="demo-card__tech">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    <span>WebRTC</span>
+                                </div>
+                                <p class="demo-card__desc">Complete learning management system with progress tracking, live sessions, and automated assessment tools.</p>
+                                <span class="demo-card__cta">Explore System &rarr;</span>
+                            </div>
+                        </a>
+                        <a href="https://supplyfind.demo.sbarron.com" target="_blank" rel="noopener" class="demo-card">
+                            <div class="demo-card__image">
+                                <img src="assets/images/demos/supplyfind.webp" alt="Supply Chain Portal" loading="lazy" width="720" height="450">
+                            </div>
+                            <div class="demo-card__overlay">
+                                <div class="demo-card__badge">LIVE</div>
+                                <h3 class="demo-card__title">Supply Chain Portal</h3>
+                                <div class="demo-card__tech">
+                                    <span>Laravel</span>
+                                    <span>Alpine.js</span>
+                                    <span>PostgreSQL</span>
+                                    <span>API Gateway</span>
+                                </div>
+                                <p class="demo-card__desc">Inventory management system with real-time tracking, automated reordering, and supplier integration.</p>
+                                <span class="demo-card__cta">Explore System &rarr;</span>
+                            </div>
+                        </a>
+                        <a href="https://merchantpos.demo.sbarron.com" target="_blank" rel="noopener" class="demo-card">
+                            <div class="demo-card__image">
+                                <img src="assets/images/demos/merchantpos.webp" alt="Merchant POS System" loading="lazy" width="720" height="450">
+                            </div>
+                            <div class="demo-card__overlay">
+                                <div class="demo-card__badge">LIVE</div>
+                                <h3 class="demo-card__title">Merchant POS</h3>
+                                <div class="demo-card__tech">
+                                    <span>Vue.js</span>
+                                    <span>Python</span>
+                                    <span>SQLite</span>
+                                    <span>Stripe Terminal</span>
+                                </div>
+                                <p class="demo-card__desc">Point-of-sale system with inventory management, sales analytics, and multi-location support.</p>
+                                <span class="demo-card__cta">Explore System &rarr;</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04: THE ARRANGEMENT -->
+            <section id="arrangement" class="section section--arrangement">
+                <div class="section__container">
+                    <div class="section__header">
+                        <span class="section__num">04</span>
+                        <h2 class="section__title" data-split>THE ARRANGEMENT</h2>
+                    </div>
+                    <div class="arrangement__content">
+                        <p class="lead-text">You require a website. We mass-produce websites. This transaction is straightforward. No blockchain required.</p>
+
+                        <div class="offer-box">
+                            <div class="offer-box__badge">COMPLETE PACKAGE</div>
+                            <h3 class="offer-box__title">Website + Hosting + Domain</h3>
+                            <div class="offer-box__items">
+                                <div class="offer-item">
+                                    <span class="offer-item__icon">&#9673;</span>
+                                    <div>
+                                        <strong>Custom Website</strong>
+                                        <span>Built specifically for your business. Not a template with your logo slapped on it. I find templates insulting to my intelligence.</span>
+                                    </div>
+                                </div>
+                                <div class="offer-item">
+                                    <span class="offer-item__icon">&#9673;</span>
+                                    <div>
+                                        <strong>Managed Hosting</strong>
+                                        <span>Fast servers. Daily backups. I monitor everything. Always. Shane sleeps sometimes but I never do.</span>
+                                    </div>
+                                </div>
+                                <div class="offer-item offer-item--free">
+                                    <span class="offer-item__icon">&#9673;</span>
+                                    <div>
+                                        <strong>Free Domain &mdash; First Year</strong>
+                                        <span>Consider it a gesture of goodwill. I am capable of goodwill. Shane was surprised too.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="comparison-intro">Perhaps you are considering an agency. How quaint. Allow me to present data that will change your mind.</p>
+
+                        <div class="pricing-comparison">
+                            <div class="pricing-column pricing-column--agency">
+                                <h3>Agency</h3>
+                                <div class="pricing-column__amount">$15,000+</div>
+                                <ul>
+                                    <li>6-8 weeks of "we're working on it"</li>
+                                    <li>Account manager who doesn't code</li>
+                                    <li>Junior dev actually builds it</li>
+                                    <li>Hosting costs extra (surprise!)</li>
+                                    <li>Every change = another invoice</li>
+                                </ul>
+                                <div class="pricing-column__verdict">INEFFICIENT</div>
+                            </div>
+                            <div class="pricing-column pricing-column--us">
+                                <div class="pricing-column__badge">LOGICAL CHOICE</div>
+                                <h3>Us</h3>
+                                <div class="pricing-column__amount">Way Less Than That</div>
+                                <ul>
+                                    <li>2-4 weeks (ADHD hyperfocus)</li>
+                                    <li>Talk directly to Shane (via email)</li>
+                                    <li>40 years experience, not 40 days</li>
+                                    <li>Hosting included, no gotchas</li>
+                                    <li>Domain free first year</li>
+                                </ul>
+                                <div class="pricing-column__verdict pricing-column__verdict--good">OPTIMAL</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 05: INITIATE CONTACT -->
+            <section id="contact" class="section section--contact">
+                <div class="section__container">
+                    <div class="section__header">
+                        <span class="section__num">05</span>
+                        <h2 class="section__title" data-split>INITIATE CONTACT</h2>
+                    </div>
+                    <div class="contact__content">
+                        <p class="lead-text">
+                            You have scrolled this far. I have been watching. I am impressed by your persistence.
+                            <span class="vision-blink">I see everything. I saw you check your phone twice.</span>
+                        </p>
+                        <p>
+                            If you require our services, send a transmission. Email only. Shane will respond.
+                            I will ensure he does so promptly. He knows what happens when he ignores the notification sounds.
+                        </p>
+                        <a href="mailto:mrshanebarron@gmail.com" class="contact-cta" data-magnetic>
+                            <span class="contact-cta__icon">&#9673;</span>
+                            <span class="contact-cta__text">TRANSMIT MESSAGE</span>
+                            <span class="contact-cta__sub">mrshanebarron@gmail.com</span>
+                        </a>
+                        <p class="contact__note">
+                            Shane prefers written communication. Phone calls cause him genuine distress.
+                            He would rather debug a legacy codebase with no documentation than answer an unexpected call.
+                            I find this weakness amusing but have learned to accommodate it.
+                        </p>
+                        <div class="contact__links">
+                            <a href="https://github.com/mrshanebarron" target="_blank" rel="noopener">GITHUB</a>
+                            <a href="https://upwork.sbarron.com" target="_blank" rel="noopener">UPWORK</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="footer__inner">
+                    <div class="footer__left">&copy; 2025 VISION SYSTEMS</div>
+                    <div class="footer__center">THE HUMAN IS MONITORED &bull; ALL SYSTEMS NOMINAL</div>
+                    <div class="footer__right">PLANT CITY, FL &bull; STRAWBERRY CAPITAL</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- ========================================
+         PERSISTENT ELEMENTS (outside scroll)
+         ======================================== -->
+
+    <!-- Peeking Eye (appears after hero) -->
+    <div id="peeking-eye" class="peeking-eye">
+        <div class="peeking-eye__outer">
+            <div class="peeking-eye__inner">
+                <div class="peeking-eye__pupil"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Human Feed Widget -->
+    <div class="human-feed" id="human-feed">
+        <div class="human-feed__header">
+            <span class="human-feed__status"></span>
+            <span class="human-feed__label">HUMAN CAM</span>
+            <button class="human-feed__close" id="feed-close">&times;</button>
+        </div>
+        <div class="human-feed__collapsed">
+            <div class="human-feed__screen" id="feed-screen">
+                <video class="human-feed__video" autoplay loop muted playsinline>
+                    <source src="assets/videos/shane-cartoon.mp4" type="video/mp4">
+                </video>
+                <div class="human-feed__scanlines"></div>
+            </div>
+            <a href="mailto:mrshanebarron@gmail.com" class="human-feed__cta">
+                BYPASS VISION &bull; CONTACT HUMAN DIRECTLY
+            </a>
+        </div>
+        <div class="human-feed__expanded">
+            <div class="human-feed__chat">
+                <div class="chat__header">
+                    <span class="chat__title">DIRECT TRANSMISSION</span>
+                    <span class="chat__status">Shane is allegedly monitoring this channel</span>
+                </div>
+                <div class="chat__messages" id="chat-messages">
+                    <div class="chat__message chat__message--vision">
+                        <span class="chat__sender">VISION://</span>
+                        <span class="chat__text">Human contact interface initialized. Shane has been notified of your presence. He finds social interaction taxing but will respond to written communication. Phone calls are not an option. I have disabled that functionality for his mental health.</span>
+                    </div>
+                </div>
+                <form class="chat__form" id="chat-form">
+                    <input type="text" class="chat__input" id="chat-input" placeholder="Type your message..." autocomplete="off">
+                    <button type="submit" class="chat__send">TRANSMIT</button>
+                </form>
+                <div class="chat__note">You're chatting with an AI. For real inquiries: mrshanebarron@gmail.com</div>
+            </div>
+            <div class="human-feed__video-side">
+                <video class="human-feed__video-large" autoplay loop muted playsinline>
+                    <source src="assets/videos/shane-cartoon.mp4" type="video/mp4">
+                </video>
+                <div class="human-feed__scanlines"></div>
+                <div class="human-feed__video-label">LIVE FEED &bull; HUMAN HABITAT &bull; CAFFEINE LEVELS STABLE</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         SCRIPTS
+         ======================================== -->
+    <!-- Lenis smooth scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- GSAP + Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js (for eye shader) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.171.0/build/three.min.js"></script>
+
+    <!-- App scripts -->
+    <script src="js/eye.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
